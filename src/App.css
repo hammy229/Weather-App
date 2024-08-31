@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #74ebd5, #9face6); /* Blue cool gradient */
+    color: #333;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .app {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); 
+    max-width: 500px; 
+  }
+  
+  .title {
+    font-size: 2rem; 
+    margin-bottom: 15px; 
+    color: #333;
+  }
+  
+  .search-container {
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    padding: 8px; 
+    border-radius: 15px; 
+    width: 75%; 
+    max-width: 350px; 
+    font-size: 0.9rem; 
+  }
+  
+  .search-button {
+    padding: 8px 15px; 
+    border-radius: 15px; 
+    font-size: 0.9rem; 
+    background-color: #0073b1;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background-color: #005582;
+  }
+  
+  .error {
+    color: #ff4d4d;
+    margin-top: 10px;
+  }
+  
+  .weather-container {
+    margin-top: 25px; 
+  }
+  
+  .city-name {
+    font-size: 1.8rem; 
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .temperature {
+    font-size: 2.5rem; 
+    font-weight: bold;
+    color: #ff6e7f;
+  }
+  
+  .weather-description {
+    font-size: 1rem; 
+    text-transform: capitalize;
+    color: #555;
+  }
+  
+  .weather-icon {
+    width: 80px; 
+    height: 80px; 
+  }
+  
+  .weather-details {
+    margin-top: 15px; 
+    font-size: 0.9rem; 
+    color: #666;
+  }
+  
+  .activities-suggestions {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .linkedin-section {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .linkedin-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Make the image circular */
+    margin-bottom: 10px;
+  }
+  
+  .linkedin-link {
+    display: inline-block;
+    padding: 10px 20px; /* Padding for the box */
+    font-size: 1rem;
+    color: white;
+    background-color: #0073b1; /* LinkedIn blue */
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  .linkedin-link:hover {
+    background-color: #005582; /* Darker blue on hover */
+  }
+  
+  .forecast-container {
+    margin-top: 30px;
+  }
+  
+  .forecast {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .forecast-day {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 8px; 
+    border-radius: 8px; 
+    font-size: 0.9rem; 
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .forecast-icon {
+    width: 40px; 
+    height: 40px; 
+  }
+  
+  .hourly-forecast-container {
+    margin-top: 20px;
+    overflow-x: auto; /* Ensure the container is scrollable horizontally */
+  }
+  
+  .hourly-forecast {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure items don't wrap to the next line */
+    overflow-x: auto; /* Horizontal scroll */
+  }
+  
+  .hourly-forecast-hour {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 8px; 
+    border-radius: 8px; 
+    font-size: 0.9rem; 
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 10px; /* Space between forecast items */
+  }
+  
+  .hourly-forecast-icon {
+    width: 40px; 
+    height: 40px; 
+  }
+  
+  .info-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #0073b1; /* Same as LinkedIn blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .info-button:hover {
+    background-color: #005582; /* Darker blue on hover */
+  }
+  
