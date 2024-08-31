@@ -39,3 +39,5 @@ http://localhost:3000
 1. **Add the `README.md` file** to your git staging area:
    ```bash
    git add README.md
+![Outline 1](https://github.com/user-attachments/assets/b02070fb-c60f-4144-93cf-add4117b7db9)
+![Outline 2](https://github.com/user-attachments/assets/27fb646d-0520-49a4-ac1b-6b069d69d870)
