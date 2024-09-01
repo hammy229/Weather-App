@@ -6,7 +6,6 @@ import LinkedInImage from './linkme.PNG'; // Import the image file
 function App() {
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState([]);
-  const [hourlyForecast, setHourlyForecast] = useState([]);
   const [city, setCity] = useState('');
   const [error, setError] = useState('');
   const [activities, setActivities] = useState('');
@@ -38,17 +37,10 @@ function App() {
         entry.dt_txt.includes('12:00:00')
       );
       setForecast(filteredForecast);
-
-      const today = new Date().toISOString().split('T')[0];
-      const filteredHourly = forecastResponse.data.list.filter((entry) =>
-        entry.dt_txt.includes(today)
-      );
-      setHourlyForecast(filteredHourly);
     } catch (err) {
       setError('Unable to retrieve weather data.');
       setWeather(null);
       setForecast([]);
-      setHourlyForecast([]);
     }
   };
 
@@ -69,17 +61,10 @@ function App() {
         entry.dt_txt.includes('12:00:00')
       );
       setForecast(filteredForecast);
-
-      const today = new Date().toISOString().split('T')[0];
-      const filteredHourly = forecastResponse.data.list.filter((entry) =>
-        entry.dt_txt.includes(today)
-      );
-      setHourlyForecast(filteredHourly);
     } catch (err) {
       setError('City not found. Please try again.');
       setWeather(null);
       setForecast([]);
-      setHourlyForecast([]);
     }
   };
 
@@ -101,7 +86,7 @@ function App() {
   };
 
   const showInfo = () => {
-    alert("PM Accelerator is a program focused on training and accelerating Product Management skills and careers. Visit their LinkedIn page for more information.");
+    alert("The Product Manager Accelerator Program is designed to support PM professionals through every stage of their career. From students looking for entry-level jobs to Directors looking to take on a leadership role, our program has helped over hundreds of students fulfill their career aspirations.");
   };
 
   return (
@@ -122,7 +107,9 @@ function App() {
       {weather && (
         <div className="weather-container">
           <h2 className="city-name">{weather.name}</h2>
-          <p className="temperature">{Math.round(weather.main.temp)}°C</p>
+          <p className="temperature">
+            {Math.round(weather.main.temp)}°C / {Math.round(weather.main.temp * 9/5 + 32)}°F
+          </p>
           <p className="weather-description">{weather.weather[0].description}</p>
           <img
             src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
@@ -160,31 +147,12 @@ function App() {
             {forecast.map((day, index) => (
               <div key={index} className="forecast-day">
                 <p>{new Date(day.dt_txt).toLocaleDateString(undefined, { weekday: 'long' })}</p>
-                <p>{Math.round(day.main.temp)}°C</p>
+                <p>{Math.round(day.main.temp)}°C / {Math.round(day.main.temp * 9/5 + 32)}°F</p>
                 <p>{day.weather[0].description}</p>
                 <img
                   src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
                   alt={day.weather[0].description}
                   className="forecast-icon"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {hourlyForecast.length > 0 && (
-        <div className="hourly-forecast-container">
-          <h3>Today's Hourly Forecast</h3>
-          <div className="hourly-forecast">
-            {hourlyForecast.map((hour, index) => (
-              <div key={index} className="hourly-forecast-hour">
-                <p>{new Date(hour.dt_txt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
-                <p>{Math.round(hour.main.temp)}°C</p>
-                <img
-                  src={`http://openweathermap.org/img/wn/${hour.weather[0].icon}.png`}
-                  alt={hour.weather[0].description}
-                  className="hourly-forecast-icon"
                 />
               </div>
             ))}
@@ -198,3 +166,4 @@ function App() {
 }
 
 export default App;
+
